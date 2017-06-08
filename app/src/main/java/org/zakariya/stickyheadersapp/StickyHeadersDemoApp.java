@@ -2,6 +2,8 @@ package org.zakariya.stickyheadersapp;
 
 import android.app.Application;
 
+import com.facebook.stetho.Stetho;
+
 import org.zakariya.stickyheadersapp.api.RandomUserLoader;
 
 /**
@@ -9,15 +11,16 @@ import org.zakariya.stickyheadersapp.api.RandomUserLoader;
  */
 public class StickyHeadersDemoApp extends Application {
 
-	RandomUserLoader randomUserLoader;
+    RandomUserLoader randomUserLoader;
 
-	@Override
-	public void onCreate() {
-		super.onCreate();
-		randomUserLoader = new RandomUserLoader();
-	}
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        randomUserLoader = new RandomUserLoader();
+        Stetho.initializeWithDefaults(this);
+    }
 
-	public RandomUserLoader getRandomUserLoader() {
-		return randomUserLoader;
-	}
+    public RandomUserLoader getRandomUserLoader() {
+        return randomUserLoader;
+    }
 }
