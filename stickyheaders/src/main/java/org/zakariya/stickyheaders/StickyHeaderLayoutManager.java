@@ -789,11 +789,12 @@ public class StickyHeaderLayoutManager extends RecyclerView.LayoutManager {
         for (View headerView : headerViews) {
             int sectionIndex = getViewSectionIndex(headerView);
 
-            FOpenLog.e("wikiFocus debug updateHeaderPositions ==== find first and last non-header views in this section " + sectionIndex);
+            FOpenLog.e("\nwikiFocus debug updateHeaderPositions ==== find first and last non-header views in this section " + sectionIndex);
             // find first and last non-header views in this section
             View ghostHeader            = null;
             View firstViewInNextSection = null;
             for (int i = 0, n = getChildCount(); i < n; i++) {
+                FOpenLog.e("wikiFocus debug updateHeaderPositions ==== child view " + i);
                 View view = getChildAt(i);
 
                 // the view has been recycled

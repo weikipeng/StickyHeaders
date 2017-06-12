@@ -1203,6 +1203,7 @@ public class SectioningAdapter extends RecyclerView.Adapter<SectioningAdapter.Vi
 		Section section = this.sections.get(sectionIndex);
 		int localPosition = adapterPosition - section.adapterPosition;
 
+		FOpenLog.e("wikiFocus debug getItemViewType sectionIndex:"+sectionIndex+" localPosition:"+localPosition);
 		int baseType = getItemViewBaseType(section, localPosition);
 		int userType = 0;
 
@@ -1266,6 +1267,7 @@ public class SectioningAdapter extends RecyclerView.Adapter<SectioningAdapter.Vi
 			if (localPosition == 0) {
 				return TYPE_HEADER;
 			} else if (localPosition == 1) {
+				FOpenLog.e("wikiFocus debug getItemViewBaseType section hasHeader hasFooter localPosition == 1 TYPE_GHOST_HEADER");
 				return TYPE_GHOST_HEADER;
 			} else if (localPosition == section.length - 1) {
 				return TYPE_FOOTER;
@@ -1276,6 +1278,7 @@ public class SectioningAdapter extends RecyclerView.Adapter<SectioningAdapter.Vi
 			if (localPosition == 0) {
 				return TYPE_HEADER;
 			} else if (localPosition == 1) {
+				FOpenLog.e("wikiFocus debug getItemViewBaseType section hasHeader localPosition == 1 TYPE_GHOST_HEADER");
 				return TYPE_GHOST_HEADER;
 			} else {
 				return TYPE_ITEM;
